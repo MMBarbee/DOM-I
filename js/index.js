@@ -41,6 +41,7 @@ const siteContent = {
 //let logo = document.getElementById("logo-img");
 //logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+/* -------- Images ------- */
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 logo.src = siteContent["nav"]["img-src"];
@@ -50,4 +51,11 @@ ctaImg.src = siteContent["cta"]["img-src"];
 
 let midImg = document.getElementById("middle-img");
 midImg.src = siteContent["main-content"]["middle-img-src"];
+
+/* -------- Nav ------- */
+const mainNav = document.querySelector("nav");
+
+const navAnchors = document.querySelectorAll("a");
+
+navAnchors.forEach((index, i) => navAnchors[i].textContent = siteContent["nav"][`${Object.keys(siteContent["nav"])[i]}`]);
 
