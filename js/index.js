@@ -74,3 +74,13 @@ mainNav.prepend(firstAnchor);
 mainNav.appendChild(lastAnchor);
 
 navAnchors.forEach(navAnchor => navAnchor.style.color = "green");
+
+/* -------- CTA ------- */
+
+const ctaHeader = document.querySelector("h1");
+ctaHeader.innerHTML = siteContent["cta"]["h1"].split(' ').join(`<br>`);
+
+const ctaButton = document.querySelector("button");
+ctaButton.textContent = siteContent["cta"]["button"];
+
+
