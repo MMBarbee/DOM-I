@@ -113,3 +113,8 @@ contentParas[8].textContent = siteContent["footer"]["copyright"];
 
 // ===== Stretch =====
 // === Adding styles
+
+contentHeaders.forEach(item => item.style.color = "green");
+contentHeaders.forEach(item => item.style.paddingBottom = "15px");
+contentHeaders.forEach(item => item.style.fontSize = "1.3rem");
+contentHeaders.forEach(item => item.style.fontFamily = "Titillium Web, sans-serif");
