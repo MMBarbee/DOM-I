@@ -59,3 +59,18 @@ const navAnchors = document.querySelectorAll("a");
 
 navAnchors.forEach((index, i) => navAnchors[i].textContent = siteContent["nav"][`${Object.keys(siteContent["nav"])[i]}`]);
 
+//
+const firstAnchor = document.createElement("a");
+firstAnchor.href = "#";
+firstAnchor.textContent = "Case Studies";
+firstAnchor.style.color = "green";
+
+const lastAnchor = document.createElement("a");
+lastAnchor.href = "#";
+lastAnchor.textContent = "Blog";
+lastAnchor.style.color = "green";
+
+mainNav.prepend(firstAnchor);
+mainNav.appendChild(lastAnchor);
+
+navAnchors.forEach(navAnchor => navAnchor.style.color = "green");
