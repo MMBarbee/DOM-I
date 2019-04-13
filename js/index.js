@@ -97,3 +97,19 @@ const mainParaKeys = Object.keys(siteContent["main-content"]).filter((key) => ke
 
 contentParas.forEach((index, i) => contentParas[i].textContent = siteContent["main-content"][`${mainParaKeys[i]}`]);
 
+/* -------- Contact ------- */
+
+contentHeaders[5].textContent = siteContent["contact"]["contact-h4"];
+
+contentParas[5].innerHTML = siteContent["contact"]["address"].split('Street ').join(`Street <br>`);
+contentParas[6].textContent = siteContent["contact"]["phone"];
+contentParas[7].textContent = siteContent["contact"]["email"];
+
+/* -------- Footer ------- */
+
+
+contentParas[8].textContent = siteContent["footer"]["copyright"];
+
+
+// ===== Stretch =====
+// === Adding styles
