@@ -38,5 +38,83 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
+//let logo = document.getElementById("logo-img");
+//logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+/* -------- Images ------- */
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.src = siteContent["nav"]["img-src"];
+
+let ctaImg = document.getElementById("cta-img");
+ctaImg.src = siteContent["cta"]["img-src"];
+
+let midImg = document.getElementById("middle-img");
+midImg.src = siteContent["main-content"]["middle-img-src"];
+
+/* -------- Nav ------- */
+const mainNav = document.querySelector("nav");
+
+const navAnchors = document.querySelectorAll("a");
+
+navAnchors.forEach((index, i) => navAnchors[i].textContent = siteContent["nav"][`${Object.keys(siteContent["nav"])[i]}`]);
+
+//
+const firstAnchor = document.createElement("a");
+firstAnchor.href = "#";
+firstAnchor.textContent = "Case Studies";
+firstAnchor.style.color = "green";
+
+const lastAnchor = document.createElement("a");
+lastAnchor.href = "#";
+lastAnchor.textContent = "Blog";
+lastAnchor.style.color = "green";
+
+mainNav.prepend(firstAnchor);
+mainNav.appendChild(lastAnchor);
+
+navAnchors.forEach(navAnchor => navAnchor.style.color = "green");
+
+/* -------- CTA ------- */
+
+const ctaHeader = document.querySelector("h1");
+ctaHeader.innerHTML = siteContent["cta"]["h1"].split(' ').join(`<br>`);
+
+const ctaButton = document.querySelector("button");
+ctaButton.textContent = siteContent["cta"]["button"];
+
+/* -------- Main ------- */
+const contentHeaders = document.querySelectorAll("h4");
+
+const mainH4Keys = Object.keys(siteContent["main-content"]).filter((key) => key.includes("h4"));
+
+contentHeaders.forEach((index, i) => contentHeaders[i].textContent = siteContent["main-content"][`${mainH4Keys[i]}`]);
+
+
+const contentParas = document.querySelectorAll("p");
+
+const mainParaKeys = Object.keys(siteContent["main-content"]).filter((key) => key.includes("content"));
+
+contentParas.forEach((index, i) => contentParas[i].textContent = siteContent["main-content"][`${mainParaKeys[i]}`]);
+
+/* -------- Contact ------- */
+
+contentHeaders[5].textContent = siteContent["contact"]["contact-h4"];
+
+contentParas[5].innerHTML = siteContent["contact"]["address"].split('Street ').join(`Street <br>`);
+contentParas[6].textContent = siteContent["contact"]["phone"];
+contentParas[7].textContent = siteContent["contact"]["email"];
+
+/* -------- Footer ------- */
+
+
+contentParas[8].textContent = siteContent["footer"]["copyright"];
+
+
+// ===== Stretch =====
+// === Adding styles
+
+contentHeaders.forEach(item => item.style.color = "green");
+contentHeaders.forEach(item => item.style.paddingBottom = "15px");
+contentHeaders.forEach(item => item.style.fontSize = "1.3rem");
+contentHeaders.forEach(item => item.style.fontFamily = "Titillium Web, sans-serif");
